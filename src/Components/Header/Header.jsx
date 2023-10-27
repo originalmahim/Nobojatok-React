@@ -1,7 +1,15 @@
-import { Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import Footer from "../Footer/Footer";
 
 const Header = () => {
+
+          const links = 
+          <>
+          <li><NavLink to="/">Home</NavLink></li>
+          <li><NavLink to="/services">Services</NavLink></li>
+          <li><NavLink to="/doctors">Our Doctors</NavLink></li>
+          <li><NavLink to="/features">Features</NavLink></li>
+          </>
           return (
           <div>
           <div className="">
@@ -29,26 +37,7 @@ const Header = () => {
           tabIndex="0"
           className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
-          <li>
-          <a>Home</a>
-          </li>
-          <li>
-          <a>services</a>
-          <ul className="p-2">
-          <li>
-          <a>About Us</a>
-          </li>
-          <li>
-          <a>Submenu 2</a>
-          </li>
-          </ul>
-          </li>
-          <li>
-          <a>Our Doctors</a>
-          </li>
-          <li>
-          <a>Contact</a>
-          </li>
+          {links}
           </ul>
           </div>
           <a className="font-black normal-case text-2xl font-kodchasan">
@@ -57,28 +46,7 @@ const Header = () => {
           </div>
           <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 text-xl">
-          <li>
-          <a href="/index.html">Home</a>
-          </li>
-          <li tabIndex="0">
-          <details>
-          <summary>services</summary>
-          <ul className="p-2">
-          <li>
-          <a>Submenu 1</a>
-          </li>
-          <li>
-          <a>Submenu 2</a>
-          </li>
-          </ul>
-          </details>
-          </li>
-          <li>
-          <a href="ourdoctors.html">Our Doctors</a>
-          </li>
-          <li>
-          <a href="features.html">Features</a>
-          </li>
+          {links}
           </ul>
           </div>
           <div className="navbar-end">
@@ -90,7 +58,7 @@ const Header = () => {
           </header>
           </div>
 
-           <div>
+          <div className="min-h-[60vh]">
           <Outlet></Outlet>
           </div>
           <Footer></Footer>                   
